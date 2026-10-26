@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evidencias</title>
+  <link rel="stylesheet" href="css.css">
+
+  <style>
+    .principal {
+      display: flex;
+      align-items: flex-start;
+      gap: 40px;
+      padding: 30px;
+    }
+
+    .menumenu {
+      display: flex;
+      flex-direction: column;
+      width: 220px;
+      flex-shrink: 0;
+      gap: 15px;
+    }
+
+    .menubutton {
+      padding: 12px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #contenedor {
+      flex: 1;
+      min-width: 0;
+      text-align: center;
+    }
+
+    #contenedor img {
+      display: none;
+      width: 900px;
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 700px) {
+      .principal {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .menumenu {
+        width: 100%;
+        max-width: 320px;
+      }
+
+      #contenedor {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body style="background-color: #4499D4;">
+
+  <nav class="menu">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="nosotros.html">Nosotros</a></li>
+      <li><a href="evidencias.html">Evidencias</a></li>
+      <li><a href="fdst.html">Solución tecnológica</a></li>
+      <li><a href="proyecto.html">Proyecto</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <img class="logo" src="logo.png" alt="Logo">
+
+  <main class="principal">
+
+    <div class="menumenu">
+      <button class="menubutton" type="button" onclick="mostrarImagen(1)">
+        Creatividad y uso
+      </button>
+
+      <button class="menubutton" type="button" onclick="mostrarImagen(2)">
+        Guía ver digital
+      </button>
+
+      <button class="menubutton" type="button" onclick="mostrarImagen(3)">
+        Guía actividad
+      </button>
+
+      <button class="menubutton" type="button" onclick="mostrarImagen(4)">
+        Aplicación
+      </button>
+
+      <button class="menubutton" type="button" onclick="mostrarImagen(5)">
+        ¿Sin creatividad?
+      </button>
+    </div>
+
+    <div id="contenedor">
+      <img id="img1" class="eviimagen" src="re1.png" alt="Creatividad y uso">
+
+      <img id="img2" class="eviimagen" src="guia digital.png" alt="Guía digital">
+
+      <img id="img3" class="eviimagen2" src="guia escrita.jpg" alt="Guía de actividad escrita">
+
+      <img id="img4" class="eviimagen2" src="app1.png" alt="Aplicación tecnológica">
+
+      <img id="img5" class="eviimagen" src="encuestadios.jpg" alt="Encuesta sobre creatividad">
+    </div>
+
+  </main>
+
+  <img class="evidenciabanner" src="bnnrevdn.png" alt="Banner de evidencias">
+
+  <script>
+    function mostrarImagen(numero) {
+      const imagenes = document.querySelectorAll("#contenedor img");
+
+      imagenes.forEach(function(imagen) {
+        imagen.style.display = "none";
+      });
+
+      const imagenSeleccionada = document.getElementById("img" + numero);
+
+      if (imagenSeleccionada) {
+        imagenSeleccionada.style.display = "block";
+
+        imagenSeleccionada.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      }
+    }
+  </script>
+
+</body>
+</html>

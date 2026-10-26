@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solución tecnológica</title>
+
+  <link rel="stylesheet" href="css.css">
+
+  <style>
+    .principal {
+      display: flex;
+      align-items: flex-start;
+      gap: 40px;
+      padding: 30px;
+    }
+
+    .menumenu {
+      display: flex;
+      flex-direction: column;
+      width: 220px;
+      gap: 15px;
+      flex-shrink: 0;
+    }
+
+    .menubutton {
+      padding: 12px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #contenedor2 {
+      flex: 1;
+      min-width: 0;
+      text-align: center;
+    }
+
+    #contenedor2 .grupo-imagenes {
+    justify-content: flex-start;
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+
+
+    #contenedor2 .grupo-imagenes img {
+      display: block;
+      width: calc((100% - 30px) / 3);
+      max-width: 300px;
+      height: auto;
+      object-fit: contain;
+      margin: 0;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 700px) {
+      .principal {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .menumenu {
+        width: 100%;
+        max-width: 320px;
+      }
+
+      #contenedor2 {
+        width: 100%;
+      }
+
+      #contenedor2 .grupo-imagenes img {
+        width: 100%;
+        max-width: 400px;
+      }
+    }
+  </style>
+</head>
+
+<body style="background-color: #554D7A;">
+
+  <nav class="menu">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="nosotros.html">Nosotros</a></li>
+      <li><a href="evidencias.html">Evidencias</a></li>
+      <li><a href="fdst.html">Solución tecnológica</a></li>
+      <li><a href="proyecto.html">Proyecto</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <img class="logo" src="logo.png" alt="Logo">
+
+  <main class="principal">
+
+    <div class="menumenu">
+      <button
+        class="menubutton"
+        type="button"
+        onclick="mostrarImagen(1)">
+        Solución tecnológica
+      </button>
+    </div>
+
+    <div id="contenedor2">
+
+      <div id="img1" class="grupo-imagenes contenido">
+        <img src="app1.png" alt="Solución tecnológica 1">
+        <img src="app2.png" alt="Solución tecnológica 2">
+        <img src="app3.png" alt="Solución tecnológica 3">
+      </div>
+
+    </div>
+
+  </main>
+
+  <img
+    class="nosotrosbanner"
+    src="bnnrst.png"
+    alt="Banner de solución tecnológica">
+
+  <script>
+    function mostrarImagen(numero) {
+      const contenidos = document.querySelectorAll(
+        "#contenedor2 .contenido"
+      );
+
+      contenidos.forEach(function(contenido) {
+        contenido.style.display = "none";
+      });
+
+      const seleccionado = document.getElementById("img" + numero);
+
+      if (seleccionado) {
+        seleccionado.style.display = "flex";
+
+        seleccionado.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      }
+    }
+  </script>
+
+</body>
+</html>

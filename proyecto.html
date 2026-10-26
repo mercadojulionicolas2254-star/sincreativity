@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyecto</title>
+  <link rel="stylesheet" href="css.css">
+
+  <style>
+    .principal2 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 25px;
+      padding: 30px;
+    }
+
+    .proyectobanner {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .menumenu2 {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .menubutton2 {
+      padding: 12px 24px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #contenedor2 {
+      width: 100%;
+      text-align: center;
+    }
+
+    #contenedor2 img {
+      display: none;
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+    }
+
+    #contenedor2 video {
+    display: none;
+    width: 900px;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+    @media (max-width: 700px) {
+      .principal2 {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body class="proyecto">
+
+  <nav class="menu">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="nosotros.html">Nosotros</a></li>
+      <li><a href="evidencias.html">Evidencias</a></li>
+      <li><a href="fdst.html">Solución tecnológica</a></li>
+      <li><a href="proyecto.html">Proyecto</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <main class="principal2">
+
+    <img
+      class="proyectobanner"
+      src="bnnrpryct.png"
+      alt="Banner del proyecto">
+
+    <div class="menumenu2">
+      <button class="menubutton2" type="button" onclick="mostrarImagen(1)">
+        Video
+      </button>
+
+      <button class="menubutton2" type="button" onclick="mostrarImagen(2)">
+        Documento
+      </button>
+    </div>
+
+    <div id="contenedor2">
+
+      <video id="img1" class="videoproyecto" controls>
+        <source src="short.mp4" type="video/mp4">
+        Tu navegador no puede reproducir este video.
+    </video>
+
+      <img
+        id="img2"
+        class="qrv"
+        src="qr.jpg"
+        alt="Código QR del documento">
+
+    </div>
+
+  </main>
+
+  <script>
+    function mostrarImagen(numero) {
+      const elementos = document.querySelectorAll(
+        "#contenedor2 img, #contenedor2 video"
+      );
+
+      elementos.forEach(function(elemento) {
+        elemento.style.display = "none";
+      });
+
+      const seleccionado = document.getElementById("img" + numero);
+
+      if (seleccionado) {
+        seleccionado.style.display = "block";
+
+        seleccionado.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      }
+    }
+  </script>
+
+</body>
+</html>
